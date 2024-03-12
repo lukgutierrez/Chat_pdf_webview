@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -8,14 +7,14 @@ import 'package:webview_flutter_android/webview_flutter_android.dart'
 
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
-class SmallPDF extends StatefulWidget {
-  const SmallPDF({super.key});
+class Askyourpdf extends StatefulWidget {
+  const Askyourpdf({super.key});
 
   @override
-  State<SmallPDF> createState() => _MyAppState();
+  State<Askyourpdf> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<SmallPDF> {
+class _MyAppState extends State<Askyourpdf> {
   late WebViewController _webViewController;
   late PlatformWebViewControllerCreationParams _params;
 
@@ -42,7 +41,9 @@ class _MyAppState extends State<SmallPDF> {
     }
 
     controller
-      ..loadRequest(Uri.parse("https://smallpdf.com/es/ia-pdf"))
+      ..loadRequest(Uri.parse("https://askyourpdf.com/es"))
+      ..clearCache()
+      ..clearLocalStorage()
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
     _webViewController = controller;
   }

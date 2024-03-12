@@ -7,14 +7,14 @@ import 'package:webview_flutter_android/webview_flutter_android.dart'
 
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
-class MyApp1 extends StatefulWidget {
-  const MyApp1({super.key});
+class ChatPDF extends StatefulWidget {
+  const ChatPDF({super.key});
 
   @override
-  State<MyApp1> createState() => _MyAppState();
+  State<ChatPDF> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp1> {
+class _MyAppState extends State<ChatPDF> {
   late WebViewController _webViewController;
   late PlatformWebViewControllerCreationParams _params;
 
@@ -72,12 +72,31 @@ class _MyAppState extends State<MyApp1> {
     }
   }
 
+  Future<void> _refresh() async {
+    await _webViewController.reload();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("CHATPDFWEB")),
+      backgroundColor: Colors.white,
       body: WebViewWidget(
         controller: _webViewController,
+      ),
+      floatingActionButton: FloatingActionButton(
+        splashColor: Colors.white,
+        backgroundColor: Colors.pink,
+        child: Icon(
+          Icons.replay_outlined,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          _refresh();
+        },
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+              40.0), // Ajusta el radio para hacerlo más redondo
+        ),
       ),
     );
   }
