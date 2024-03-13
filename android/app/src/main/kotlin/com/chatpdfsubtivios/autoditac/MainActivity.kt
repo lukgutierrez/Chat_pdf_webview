@@ -1,4 +1,4 @@
-package com.example.chat_pdf_subtivios
+package com.chatpdfsubtivios.autoditac
 
 import io.flutter.embedding.android.FlutterActivity
 
