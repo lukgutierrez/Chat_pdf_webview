@@ -1,6 +1,5 @@
 import 'package:chat_pdf_subtivios/pages/chatpdf1.dart';
 import 'package:chat_pdf_subtivios/pages/chatpdf2.dart';
-import 'package:chat_pdf_subtivios/pages/chatpdf3.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List _screens = [
     ChatPDF(),
     SmallPDF(),
-    Askyourpdf(),
   ];
 
   @override
@@ -30,9 +28,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 CurvedNavigationBarItem(
                     child: Icon(
                       Icons.picture_as_pdf,
-                      color: Colors.white,
+                      color: Colors.pink,
                     ),
-                    label: 'Chat PDF',
+                    label: '1',
                     labelStyle: TextStyle(
                         color: Colors
                             .white) // Use title instead of label for accessibility
@@ -40,22 +38,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 CurvedNavigationBarItem(
                     child: Icon(
                       Icons.picture_as_pdf,
-                      color: Colors.white,
+                      color: Colors.pink,
                     ),
-                    label: 'Small PDF',
-                    labelStyle: TextStyle(color: Colors.white)),
-                CurvedNavigationBarItem(
-                    child: Icon(
-                      Icons.picture_as_pdf,
-                      color: Colors.white,
-                    ),
-                    label: 'Ask your PDF',
-                    labelStyle: TextStyle(color: Colors.white)),
+                    label: '2',
+                    labelStyle: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold)),
               ],
               color: Colors.black,
               buttonBackgroundColor: Colors.black,
               backgroundColor: Colors.pink,
-              animationCurve: Curves.ease,
+              animationCurve: Curves.slowMiddle,
               animationDuration: Duration(milliseconds: 200),
               onTap: (index) => _handlePageChange(index),
             ),

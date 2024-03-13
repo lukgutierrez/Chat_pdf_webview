@@ -78,24 +78,27 @@ class _MyAppState extends State<SmallPDF> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Chat PDF",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.black,
+        elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: () {
+                _refresh();
+              },
+              icon: Icon(
+                Icons.replay_outlined,
+                color: Colors.pink,
+              ))
+        ],
+      ),
       backgroundColor: Colors.white,
       body: WebViewWidget(
         controller: _webViewController,
-      ),
-      floatingActionButton: FloatingActionButton(
-        splashColor: Colors.white,
-        backgroundColor: Colors.pink,
-        child: Icon(
-          Icons.replay_outlined,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          _refresh();
-        },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-              40.0), // Ajusta el radio para hacerlo más redondo
-        ),
       ),
     );
   }
